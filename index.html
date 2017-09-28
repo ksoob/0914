@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+	<title>자바스크립트 실습</title>
+	<style>
+		input{font-size: 0.9em;}
+		button{font-size: 0.9em}
+		body{font-size: 1.05em;}
+	</style>
+</head>
+<body>
+	
+	<h1 id="display">당신의 표준체중을 알아보세요~</h1>
+
+	<input type = "text" id="weight" placeholder="당신의 체중을 알려주세요"> kg
+	<input type = "text" id="height" placeholder="당신의 키를 알려주세요"> cm
+	<br><button id="action">계산하기</button>
+	<!-- html 주석은 화살표 -->
+	<!--하이픈 소문자로 이름 html 이름 정석-->
+
+	<script>
+		//변수와 함수
+		//variable and fuction
+		//소문자 시작 다음단어 대문자 스트립트 이름정석
+		//아이디에 하이픈 넣지않기 (자바에서는 안먹힘)
+		
+		action.onclick = function(){
+			//alert("ok");
+			//or
+			console.log("ok"); 
+			//standardWeight(weight.value, height.value);
+			var myWeight = weight.value;
+			var myHeight = height.value;
+			standardWeight(myWeight, myHeight);
+		}
+
+		
+
+	function standardWeight(weight, height){
+		//var weight = 48;
+		//var height = 157;
+		var standardWeight = (height - 100) * 0.9;
+		var dietWeight = weight - standardWeight
+		var text = "당신의 현재 몸무게는 " + weight + "kg이고, 표준 체중은 " + standardWeight + "kg입니다. 따라서 당신은 " + dietWeight + "kg을 감량해야합니다.";
+		display.innerHTML = text; 
+	}
+		
+	</script>
+</body>
